@@ -1,0 +1,17 @@
+SH_Type	1
+
+Dt		0.001
+Dx		0.6
+
+Nx		128
+Ny		128
+
+NumIteration	100000
+OutputStep		1000
+
+NumThread		1
+
+InputInitMode	0
+InputInitFileName	test.dat
+
+End
