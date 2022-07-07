@@ -9,12 +9,6 @@ double SHEquation::CalcRHS(double** w_old, int x, int y){
 	return 0.0;
 }
 
-/*
-void SH_Type0::Construct(Input& ip){
-	Alpha = ip.Alpha;
-	Beta = ip.Beta;
-}
-*/
 void SH_Type0::Construct(Input& ip){
 	std::cout << "ReadParameter ... " << std::endl;
 
@@ -50,17 +44,6 @@ double SH_Type0::CalcRHS(double** w_old, int x, int y){
 	return f;
 }
 
-/*
-void SH_Type1::Construct(double alpha, double lambda, double dx, int nx, int ny){
-	Alpha = alpha;
-	Lambda = lambda;
-	F.Construct(dx, nx, ny);
-}
-void SH_Type1::Construct(Input& ip){
-	Alpha = ip.Alpha;
-	Lambda = ip.Lambda;
-}
-*/
 void SH_Type1::Construct(Input& ip){
 	std::cout << "ReadParameter ... " << std::endl;
 	DirName = ip.DirName;

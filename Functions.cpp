@@ -65,8 +65,7 @@ double Functions::Dx2Dy2(double** w, int x, int y){
 }
 
 double Functions::Laplacian(double** w, int x, int y){
-	//double result = (w[i][(j+1)%Ny] - w[i][j]) + (w[i][(j-1+Ny)%Ny] - w[i][j]) + (w[(i+1)%Nx][j] - w[i][j]) + (w[(i-1+Nx)%Nx][j] - w[i][j]); // periodic boundary condition
-	double result = Dx2(w, x, y) + Dy2(w, x, y);
+	double result = Dx2(w, x, y) + Dy2(w, x, y); // periodic boundary condition
 	return result;
 }
 
