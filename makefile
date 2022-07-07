@@ -8,7 +8,7 @@ OBJS = \
 	   Solver.o\
 	   Input.o\
 
-PROGRAM = SwiftHohenberg
+PROGRAM = SH
 
 all: $(PROGRAM)
 
