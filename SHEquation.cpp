@@ -21,8 +21,12 @@ void SH_Type0::Construct(Input& ip){
 	}
 
 	std::string dummy;
-	fin >> dummy; fin >> Alpha; std::cout << "Alpha: " << Alpha << std::endl;
-	fin >> dummy; fin >> Beta; std::cout << "Beta: " << Beta << std::endl;
+	fin >> dummy; fin >> a; std::cout << "a: " << a << std::endl;
+	fin >> dummy; fin >> b; std::cout << "b: " << b << std::endl;
+	fin >> dummy; fin >> c; std::cout << "c: " << c << std::endl;
+	fin >> dummy; fin >> d; std::cout << "d: " << d << std::endl;
+	fin >> dummy; fin >> e; std::cout << "e: " << e << std::endl;
+	std::cout << "∂_t w = -aΔ^2w - bΔw - cw - dw^2 - ew^3" << std::endl;
 
 	std::string check;
 	fin >> check;
@@ -36,11 +40,12 @@ void SH_Type0::Construct(Input& ip){
 	std::cout << "done." << std::endl;
 }
 double SH_Type0::CalcRHS(double** w_old, int x, int y){
-	double term1 = -F.Laplacian2(w_old, x, y);
-	double term2 = -F.Laplacian(w_old, x, y);
-	double term3 = -Alpha * w_old[x][y];
-	double term4 = -Beta * w_old[x][y] * w_old[x][y] * w_old[x][y];
-	double f = term1 + term2 + term3 + term4;
+	double term1 = -a * F.Laplacian2(w_old, x, y);
+	double term2 = -b * F.Laplacian(w_old, x, y);
+	double term3 = -c * w_old[x][y];
+	double term4 = -d * w_old[x][y] * w_old[x][y];
+	double term5 = -e * w_old[x][y] * w_old[x][y] * w_old[x][y];
+	double f = term1 + term2 + term3 + term4 + term5;
 	return f;
 }
 
@@ -56,6 +61,7 @@ void SH_Type1::Construct(Input& ip){
 	std::string dummy;
 	fin >> dummy; fin >> Alpha; std::cout << "Alpha: " << Alpha << std::endl;
 	fin >> dummy; fin >> Lambda; std::cout << "Lambda: " << Lambda << std::endl;
+	std::cout << "∂_t w = -Δ^2w - Δw - α(R(w-(1-Λ)) - R(-w - Λ))" << std::endl;
 
 	std::string check;
 	fin >> check;

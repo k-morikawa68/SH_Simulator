@@ -107,7 +107,7 @@ void Simulator::OutputVTK(int step){
 }
 
 void Simulator::Output(){
-	std::string fname = DirName + ".dat";
+	std::string fname = "result.dat";
 	fname = DirName + "/" + fname;
 	std::ofstream fout(fname);
 	for(int i = 0; i < Nx; i++){

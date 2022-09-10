@@ -26,7 +26,8 @@ void Input::ReadInputFile(std::string dirName){
 	fin >> dummy; fin >> NumThread; std::cout << "NumThread: " << NumThread << std::endl;
 
 	fin >> dummy; fin >> InputInitMode; std::cout << "InputInitMode: " << InputInitMode << std::endl;
-	fin >> dummy; fin >> InputInitFileName; std::cout << "InputInitFileName: " << InputInitFileName << std::endl;
+	fin >> dummy; fin >> InputInitFileName; 
+	if(InputInitMode == 1) std::cout << "InputInitFileName: " << InputInitFileName << std::endl;
 
 	std::string check;
 	fin >> check;

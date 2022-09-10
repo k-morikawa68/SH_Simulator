@@ -17,8 +17,11 @@ public:
 
 class SH_Type0 : public SHEquation{
 private:
-	double Alpha;
-	double Beta;
+	double a;
+	double b;
+	double c;
+	double d;
+	double e;
 public:
 	void Construct(Input&);
 	double CalcRHS(double**, int, int);

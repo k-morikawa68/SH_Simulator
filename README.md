@@ -8,7 +8,7 @@ Sci Rep 12, 11326 (2022). https://doi.org/10.1038/s41598-022-15343-y"
 
 ## Equations ##
 SH_Type0:
-$$\frac{\partial w}{\partial t} = -\Delta^2 w - \Delta w - \alpha w - \beta w^3$$
+$$\frac{\partial w}{\partial t} = -a\Delta^2 w - b\Delta w - cw - dw^2 - ew^3$$
 
 
 SH_Type1 (used in our paper):
