@@ -22,4 +22,4 @@ $$R(x) = \max(x, 0)$$
 
 example:
 
-    ./SH.out example
+    ./SH.out example_type1
