@@ -1,0 +1,6 @@
+Alpha_a 0.1
+Beta_a	1.0
+Alpha_b	0.1
+Beta_b	1.0
+
+End

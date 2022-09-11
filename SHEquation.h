@@ -36,4 +36,15 @@ public:
 	double CalcRHS(double**, int, int);
 };
 
+class SH_Type2 : public SHEquation{
+private:
+	double Alpha_a;
+	double Beta_a;
+	double Alpha_b;
+	double Beta_b;
+public:
+	void Construct(Input&);
+	double CalcRHS(double**, int, int);
+};
+
 #endif

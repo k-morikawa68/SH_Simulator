@@ -22,6 +22,8 @@ Simulator::Simulator(std::string dirName){
 		case 1:
 			pSH = new SH_Type1;
 			break;
+		case 2:
+			pSH = new SH_Type2;
 	}
 	pSH->Construct(IP);
 }

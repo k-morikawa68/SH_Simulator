@@ -15,6 +15,11 @@ SH_Type1 (used in our paper):
 $$\frac{\partial w}{\partial t} = -\Delta^2 w - \Delta w - \alpha(R(w - (1 - \Lambda)) - R(-w - \Lambda))$$
 $$R(x) = \max(x, 0)$$
 
+
+SH_Type2:
+$$\frac{\partial w}{\partial t} = -\Delta^2 w - \Delta w - \alpha_a R(w) - \beta_a (R(x))^3 + \alpha_b R(-w) + \beta_b (R(-w))^3$$
+$$R(x) = \max(x, 0)$$
+
 ## How to make and run ##
     make
 
