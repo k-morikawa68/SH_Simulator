@@ -100,9 +100,9 @@ void Simulator::OutputVTK(int step){
 	fout << "POINT_DATA " << Nx * Ny << "\n";
 	fout << "SCALARS u float\n";
 	fout << "LOOKUP_TABLE default\n";
-	for(int i = 0; i < Ny; i++){
-		for(int j = 0; j < Nx; j++){
-			fout << (float)u[j][i] << "\n";
+	for(int y = 0; y < Ny; y++){
+		for(int x = 0; x < Nx; x++){
+			fout << (float)u[x][y] << "\n";
 		}
 	}
 	fout.close();
