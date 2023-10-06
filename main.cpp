@@ -12,6 +12,8 @@ int main(int argc, char* argv[]){
 	Simulator Sim(dirName);
 	Sim.Initialize();
 	Sim.OutputVTK(0);
+	Sim.MakeOutputEnergyFile();
+	Sim.OutputEnergy(0);
 	Sim.IterateSecondRungeKuttaStep(1);
 	std::cout << "Simulation finished." << std::endl;
 	Sim.Output();

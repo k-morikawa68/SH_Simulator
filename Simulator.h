@@ -31,6 +31,8 @@ public:
 	void IterateSecondRungeKuttaStep(int);
 	void OutputVTK(int);
 	void Output();
+	void MakeOutputEnergyFile();
+	void OutputEnergy(int);
 };
 
 #endif

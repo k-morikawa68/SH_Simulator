@@ -121,12 +121,34 @@ void Simulator::Output(){
 	fout.close();
 }
 
+void Simulator::MakeOutputEnergyFile(){
+	std::string fname = DirName + "/energy.dat";
+	std::ofstream fout(fname);
+	if(!fout){
+		std::cout << "Error: cannot open output energy file." << std::endl;
+		exit(1);
+	}
+	fout << "Step\t\tEnergy" << std::endl;
+}
+void Simulator::OutputEnergy(int step){
+	pSH->CalcEnergy(u);
+	std::string fname = DirName + "/energy.dat";
+	std::ofstream fout(fname, std::ios::app);
+	if(!fout){
+		std::cout << "Error: cannot open output energy file." << std::endl;
+		exit(1);
+	}
+	fout << std::setfill('0') << std::setw(9) << step << "\t" << pSH->GetEnergy() << std::endl;
+}
+
 void Simulator::IterateSecondRungeKuttaStep(int startStep){
 	int endStep = startStep - 1 + NumIteration;
 	for(int i = startStep; i <= endStep; i++){
 		SRK.CalcNext(u_old, u, pSH);
 		if(i % OutputStep == 0){
 			OutputVTK(i);
+			OutputEnergy(i);
 		}
 	}
 }
+

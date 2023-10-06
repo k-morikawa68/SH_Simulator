@@ -1,6 +1,7 @@
 #include <iostream>
 #include <omp.h>
 #include "Solver.h"
+#include <cmath>
 
 void SecondRungeKutta::Construct(Input& ip){
 	Nx = ip.Nx;
@@ -50,3 +51,4 @@ void SecondRungeKutta::CalcNext(double** u_old, double** u, SHEquation* psh){
 		}
 	}
 }
+
