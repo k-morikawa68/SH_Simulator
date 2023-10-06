@@ -204,8 +204,8 @@ void SH_Type2::CalcEnergy(double** w){
 			double dudy = (w[i][(j+1)%Ny] - w[i][(j-1+Ny)%Ny]) / Dx * 0.5;
 			double term1 = 0.5 * pow(F.Laplacian(w, i, j), 2);
 			double term2 = -0.5 * (pow(dudx, 2) + pow(dudy, 2));
-			double term3 = 0.5 * Alpha_a * pow(F.RampFunc(w[i][j], 0.0), 2) + Alpha_b * pow(F.RampFunc(-w[i][j], 0.0), 2);
-			double term4 = 0.25 * Beta_a * pow(F.RampFunc(w[i][j], 0.0), 4) + Beta_b * pow(F.RampFunc(-w[i][j], 0.0), 4);
+			double term3 = 0.5 * (Alpha_a * pow(F.RampFunc(w[i][j], 0.0), 2) + Alpha_b * pow(F.RampFunc(-w[i][j], 0.0), 2));
+			double term4 = 0.25 * (Beta_a * pow(F.RampFunc(w[i][j], 0.0), 4) + Beta_b * pow(F.RampFunc(-w[i][j], 0.0), 4));
 			eng +=  term1 + term2 + term3 + term4;
 		}
 	}
